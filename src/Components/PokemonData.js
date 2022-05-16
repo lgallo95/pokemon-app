@@ -6,11 +6,10 @@ import image from "../../src/1125x2436-pastel-blue-solid-color-background.jpg"
 
 
 
+
 const PokedexContainer = styled.div`
   display: flex;
   flex-direction: row;
-  
-  
 `;
 
 const CardContainer = styled.div`
