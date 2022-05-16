@@ -3,18 +3,13 @@ import styled from "styled-components";
 
 const DataContainer = styled.div`
   background: black;
-
   margin: auto;
-
   border: 5px solid whitesmoke;
-
   filter: drop-shadow(1px 1px 5px #000);
 `;
 
-
 export default function PokemonDataDetail(props) {
   const { pokemonData, displayData } = props;
-  
 
   const addToFav = () => {
     localStorage.setItem(
@@ -72,11 +67,11 @@ export default function PokemonDataDetail(props) {
             : ""}
         </p>
 
-        <p className="ptag">
+        {/* <p className="ptag">
           {displayData === true && pokemonData.weaknesses[0].type
             ? `Weakness: ${pokemonData.weaknesses[0].type}`
             : ""}
-        </p>
+        </p> */}
 
         <p className="ptag">
           {displayData === false ? `${pokemonData.name} Stat Card` : ""}

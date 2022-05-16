@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import PokemonData from "./PokemonData";
 import styled from "styled-components";
+import favorite from "../favorite.png"
+import back from "../back.png"
+import blue from "../blue.png"
+import red from "../red.png"
+import logo from "../logo.png"
 
 const DataStyle = styled.div`
   position: fixed;
@@ -10,26 +15,41 @@ const DataStyle = styled.div`
   margin: 0 auto;
   width: 60%;
   height: 80%;
-  overflow: auto ;
+  overflow: auto;
   padding: 1%;
   border-radius: 15px;
   background-color: crimson;
+  border: 25px solid crimson;
   filter: drop-shadow(0px 1px 1px #000);
 `;
 
-const Cards = styled.div`
-  /* display: flex;
-  flex-direction: column; */
-`;
+const LogoStyle = styled.img`
+width:25%;
+margin-right: 20% ;
+`
 
-const Pokedex1 = styled.div`
-  background: #dc0a2d;
-`;
+const ButtonStyle = styled.img`
+width:10%;
+`
+const ButtonStyle2 = styled.img`
+width:15%;
+`
+
+const ButtonStyle3 = styled.img`
+width:16%;
+margin-bottom: 1%;
+`
 
 
-
-
-
+const ButtonBackgroundStyle = styled.div`
+background: crimson;
+width: 50%;
+position: absolute;
+margin-left: 32%;
+margin-top: 1%;
+text-align: right;
+border-radius: 15px;
+`
 
 export default function Dataset(props) {
   const { pokemonData } = props;
@@ -63,60 +83,16 @@ export default function Dataset(props) {
     <>
       <DataStyle>
         <div>
-          <button onClick={filterFav}> View My Favorites </button>
-          <button onClick={unFilterFav}> Back </button>
-          <Cards>{search === true ? normalData : favData}</Cards>
+          <div>{search === true ? normalData : favData}</div>
         </div>
       </DataStyle>
-      <div>
-      Add buttons here
-      
-    </div>
+      <ButtonBackgroundStyle>
+        <LogoStyle src={logo} alt="Pokedex" />
+        <ButtonStyle src={favorite} alt="Favorite Button" onClick={filterFav}/>
+        <ButtonStyle src = {back} alt="Back Button" onClick={unFilterFav}/>
+        <ButtonStyle2 src = {blue} alt="Blue Icon"/>
+        <ButtonStyle3 src = {red} alt="Red Icon"/>
+      </ButtonBackgroundStyle>
     </>
   );
 }
-
-// export default function Dataset(props) {
-//   const { pokemonData } = props;
-//   const [namefilter, setNameFilter] = useState([])
-//   const [search, setSearch] = useState('')
-
-// const onChange = event => {
-//   setSearch(event.target.value)
-//   const foundPokemon = pokemonData.filter((pokemon) => {
-//     return pokemon.name.includes(search)
-//   })
-//   setNameFilter(foundPokemon)
-// }
-
-// const filterFav = () =>{
-//   setSearch(false)
-// }
-
-// const unFilterFav = () =>{
-//   setSearch('')
-// }
-
-// const filteredData = namefilter.map((pokemon) => {
-//   return <PokemonData pokemonData={pokemon} key={pokemon.id} />;
-// })
-
-// const normalData = pokemonData.map((pokemon) => {
-//   return <PokemonData pokemonData={pokemon} key={pokemon.id} />;
-// })
-
-//   return (
-//     <MainPageStyle>
-//       <DataStyle>
-//       <button onClick={filterFav}> View My Favorites </button>
-//       <button onClick={unFilterFav}> Back </button>
-//       <InputSize type = 'text' placeholder="Search by Pokemon" onChange={onChange}/>
-//       <Cards>
-//         {
-//           (search === "") ? normalData : filteredData
-//         }
-//       </Cards>
-//       </DataStyle>
-//     </MainPageStyle>
-//   );
-// }
