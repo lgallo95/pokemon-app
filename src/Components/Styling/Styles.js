@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import image from "../Images/screenblue.jpg"
+import image from "../Images/screenblue.jpg";
 
-
+// @media (max-width: 2560px) {
+//   border: 5px solid blue;
+//  }
 
 // ----------------------------------------------------------------PokemonCards-----------------------------------------------------------
 export const DataStyle = styled.div`
@@ -17,7 +19,7 @@ export const DataStyle = styled.div`
   border-radius: 15px;
   background-color: crimson;
   border: 25px solid crimson;
-  filter: drop-shadow(0px 1px 1px #000);
+  filter: drop-shadow(0px 1px 5px #000);
 `;
 
 export const LogoStyle = styled.img`
@@ -39,17 +41,26 @@ export const ButtonStyle3 = styled.img`
 
 export const ButtonBackgroundStyle = styled.div`
   background: crimson;
-  width: 50%;
+  width: 60vh;
   position: absolute;
-  margin-left: 32%;
+  margin-left: 51.75%;
   margin-top: 1%;
   text-align: right;
   border-radius: 15px;
+  filter: drop-shadow(0px 1px 5px #000);
+
+  @media (max-width: 1920px) {
+    margin-left: 51.5%;
+    margin-top: 1%;
+  }
 `;
 // ---------------------------------------------------------------------------------------------------------------------------------------
 
+// @media (max-width: 2560px) {
+//   border: 5px solid blue;
+//  }
 
-// ----------------------------------------------------------------PokemonData----------------------------------------------------------- 
+// ----------------------------------------------------------------PokemonData-----------------------------------------------------------
 export const PokedexContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -73,19 +84,21 @@ export const CardImg = styled.img`
 `;
 
 export const InfoPanel = styled.div`
-background-image: url(${image});
-background-repeat: no-repeat;
-background-size: 75% 75%;
-background-position: center;
-justify-content: center;
-text-align: center;
-align-items: center;
-width: 50%;
-display: grid; 
-filter: drop-shadow(1px 1px 5px #000);
-`
-// -------------------------------------------------------------------------------------------------------------------------------------------- 
-
+  background-image: url(${image});
+  background-repeat: no-repeat;
+  background-size: 75% 75%;
+  background-position: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 75vh;
+  display: grid;
+  filter: drop-shadow(1px 1px 5px #000);
+`;
+// --------------------------------------------------------------------------------------------------------------------------------------------
+// @media (max-width: 2560px) {
+//   border: 5px solid blue;
+//  }
 
 // ----------------------------------------------------------------PokemonDataDetail-----------------------------------------------------------
 export const DataContainer = styled.div`
@@ -98,5 +111,20 @@ export const DataContainer = styled.div`
 export const DataCardInfo = styled.p`
   color: white;
 
-`
+  /* @media (max-width: 1920px) {
+    font-size: 100%;
+  } */
+`;
+
+export const DataCardContainer = styled.div`
+  width: 25vh;
+
+  @media (max-width: 1920px) {
+    width: 25vh;
+  }
+`;
 // ------------------------------------------------------------------------------------------------------------------------------------------
+
+// @media (max-width: 2560px) {
+//   border: 5px solid blue;
+//  }

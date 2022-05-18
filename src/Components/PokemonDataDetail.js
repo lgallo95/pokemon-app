@@ -1,5 +1,5 @@
 import React from "react";
-import {DataContainer, DataCardInfo} from './Styling/Styles'
+import {DataContainer, DataCardInfo, DataCardContainer} from './Styling/Styles'
 
 
 export default function PokemonDataDetail(props) {
@@ -17,6 +17,7 @@ export default function PokemonDataDetail(props) {
 
   return (
     <div>
+      <DataCardContainer>
       <DataContainer>
         <DataCardInfo> {displayData === true ? `Pokedex Number: ${pokemonData.nationalPokedexNumbers}`: ""}</DataCardInfo>
         <DataCardInfo> {displayData === true ? `Name: ${pokemonData.name}` : ""} </DataCardInfo>
@@ -31,6 +32,7 @@ export default function PokemonDataDetail(props) {
       <p className="test">{displayData === false ? "Click Card For More Info!" : ""}</p>
       {!isFav && <button onClick={addToFav}> Add to Favorites </button>}
       {isFav && <button onClick={removeFromFav}> Remove From Favorites </button>}
+      </DataCardContainer>
     </div>
   );
 }
