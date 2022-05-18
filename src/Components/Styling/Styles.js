@@ -43,16 +43,17 @@ export const ButtonBackgroundStyle = styled.div`
   background: crimson;
   width: 60vh;
   position: absolute;
-  margin-left: 51.75%;
+  margin-left: 96.8vh;
   margin-top: 1%;
   text-align: right;
   border-radius: 15px;
   filter: drop-shadow(0px 1px 5px #000);
 
-  @media (max-width: 1920px) {
-    margin-left: 51.5%;
+  @media (max-width: 1920px ) {
     margin-top: 1%;
+    margin-left: 102vh;
   }
+  
 `;
 // ---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -80,6 +81,7 @@ export const CardImg = styled.img`
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  margin-bottom: 4vh;
   filter: drop-shadow(1px 3px 10px #000);
 `;
 
@@ -105,23 +107,17 @@ export const DataContainer = styled.div`
   background: black;
   margin: auto;
   border: 5px solid whitesmoke;
+  width: 10vw ;
+ 
   filter: drop-shadow(1px 1px 5px #000);
 `;
 
 export const DataCardInfo = styled.p`
   color: white;
-
-  /* @media (max-width: 1920px) {
-    font-size: 100%;
-  } */
 `;
 
 export const DataCardContainer = styled.div`
   width: 25vh;
-
-  @media (max-width: 1920px) {
-    width: 25vh;
-  }
 `;
 // ------------------------------------------------------------------------------------------------------------------------------------------
 
