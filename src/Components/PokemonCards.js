@@ -1,67 +1,17 @@
 import React, { useState } from "react";
 import PokemonData from "./PokemonData";
-import styled from "styled-components";
-import favorite from "../favorite.png"
-import back from "../back.png"
-import blue from "../blue.png"
-import red from "../red.png"
-import logo from "../logo.png"
-
-const DataStyle = styled.div`
-  position: fixed;
-  top: 7%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 60%;
-  height: 80%;
-  overflow: auto;
-  padding: 1%;
-  border-radius: 15px;
-  background-color: crimson;
-  border: 25px solid crimson;
-  filter: drop-shadow(0px 1px 1px #000);
-`;
-
-const LogoStyle = styled.img`
-width:25%;
-margin-right: 20% ;
-`
-
-const ButtonStyle = styled.img`
-width:10%;
-`
-const ButtonStyle2 = styled.img`
-width:15%;
-`
-
-const ButtonStyle3 = styled.img`
-width:16%;
-margin-bottom: 1%;
-`
-
-
-const ButtonBackgroundStyle = styled.div`
-background: crimson;
-width: 50%;
-position: absolute;
-margin-left: 32%;
-margin-top: 1%;
-text-align: right;
-border-radius: 15px;
-`
+import favorite from "../Components/Images/favorite.png"
+import back from "../Components/Images/back.png"
+import blue from "../Components/Images/blue.png"
+import red from "../Components/Images/red.png"
+import logo from "../Components/Images/logo.png"
+import useLocalStorage from "./Hooks/useLocalStorage";
+import {DataStyle, LogoStyle, ButtonStyle, ButtonStyle2, ButtonStyle3, ButtonBackgroundStyle} from "../Components/Styling/Styles"
 
 export default function Dataset(props) {
   const { pokemonData } = props;
   const [search, setSearch] = useState(true);
-  const favArray = [];
-
-  for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    let value = localStorage.getItem(key);
-
-    favArray.push(JSON.parse(value));
-  }
+  const [ favArray, setFavArray, removeVal ] = useLocalStorage( 'favArray', [])
 
   const filterFav = () => {
     setSearch(false);
@@ -72,11 +22,11 @@ export default function Dataset(props) {
   };
 
   const normalData = pokemonData.map((pokemon) => {
-    return <PokemonData pokemonData={pokemon} key={pokemon.id} />;
+    return <PokemonData pokemonData={pokemon} key={pokemon.id} setFavArray = {setFavArray}/>;
   });
 
   const favData = favArray.map((pokemon) => {
-    return <PokemonData pokemonData={pokemon} key={pokemon.id} />;
+    return <PokemonData pokemonData={pokemon} key={pokemon.id} setFavArray = {setFavArray} removeVal = {removeVal} isFav = {true} />;
   });
 
   return (

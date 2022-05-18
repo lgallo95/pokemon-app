@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "../src/API/Api.js";
-import PokemonCards from "../src/Components/PokemonCards";
+import axios from "../API/Api.js";
+import PokemonCards from "./PokemonCards";
+
+
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
