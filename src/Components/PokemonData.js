@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PokemonDataDetail from "./PokemonDataDetail";
-import {PokedexContainer, CardContainer, CardImg, InfoPanel} from "./Styling/Styles"
+import {PokedexContainer, CardContainer, CardImg, InfoPanel, NamePlate} from "./Styling/Styles"
 
 
 export default function PokemonData(props) {
@@ -21,7 +21,7 @@ export default function PokemonData(props) {
     <>
       <PokedexContainer>
         <CardContainer>
-          <h1> {pokemonData.name} </h1>
+          <NamePlate> {pokemonData.name} </NamePlate>
           <CardImg
             alt="Pokemon"
             src={pokemonData.images.large}

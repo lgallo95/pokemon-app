@@ -1,18 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import {DataContainer, DataCardInfo, DataCardContainer} from './Styling/Styles'
 
 
 export default function PokemonDataDetail(props) {
   const { pokemonData, displayData, setFavArray, removeVal, isFav } = props;
+  const [buttonPressed, setButtonPressed] = useState(true)
+
+  console.log(buttonPressed)
 
   const addToFav = () => {
     setFavArray(pokemonData)
     window.alert(`Added to favorites... ${pokemonData.name} jumps with joy!`);
+    setButtonPressed(false)
+    console.log(buttonPressed)
   };
 
   const removeFromFav = () => {
     removeVal(pokemonData)
     window.alert(`Removed from favorites... ${pokemonData.name} is crying`);
+    setButtonPressed(true)
   };
 
   return (
@@ -30,8 +36,8 @@ export default function PokemonDataDetail(props) {
         <DataCardInfo> {displayData === false ? `${pokemonData.name} Stat Card` : ""} </DataCardInfo>
       </DataContainer>
       <p className="test">{displayData === false ? "Click Card For More Info!" : ""}</p>
-      {!isFav && <button onClick={addToFav}> Add to Favorites </button>}
-      {isFav && <button onClick={removeFromFav}> Remove From Favorites </button>}
+      {!isFav && buttonPressed ? <button onClick={addToFav}> Add to Favorites &#11088; </button> : <p> {pokemonData.name} &#9989;</p>}
+      {isFav && <button onClick={removeFromFav}> Remove From Favorites &#128683; </button>}
       </DataCardContainer>
     </div>
   );

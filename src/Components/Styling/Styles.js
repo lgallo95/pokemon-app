@@ -94,7 +94,7 @@ export const CardImg = styled.img`
 export const InfoPanel = styled.div`
  background-image: url(${image});
  background-repeat: no-repeat;
- background-size: 75% 75%;
+ background-size: 70% 70%;
  background-position: center;
  justify-content: center;
  text-align: center;
@@ -103,6 +103,18 @@ export const InfoPanel = styled.div`
  display: grid;
  filter: drop-shadow(1px 1px 5px #000);
 `;
+
+export const NamePlate = styled.h1`
+
+position: relative;
+
+background: #FFCB05;
+
+margin: 1vw 5vw;
+border-radius: 15px;
+filter: drop-shadow(1px 1px 5px #000);
+
+`
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // @media (max-width: 2560px) {
 //   border: 5px solid blue;
