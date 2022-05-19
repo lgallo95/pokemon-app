@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import image from "../Images/screenblue.jpg";
 
-// @media (max-width: 2560px) {
-//   border: 5px solid blue;
-//  }
-
 // ----------------------------------------------------------------PokemonCards-----------------------------------------------------------
 
 export const MainContainer = styled.div `
@@ -17,11 +13,11 @@ export const ButtonBackgroundStyle = styled.div`
   z-index: 1;
   position: relative;
   background: crimson;
-  margin: 0 1vw 0 50vw ;
+  margin: 0 1vw 0 72vw ;
   text-align: right;
   border-radius: 15px;
   right: 16.4vw;
-  top: 1vw;
+  top: 2.5vw;
   filter: drop-shadow(0px 1px 5px #000);
 `;
 
@@ -31,7 +27,7 @@ export const DataStyle = styled.div`
   // 
   // padding: 1%;
   
-  
+  margin: 3vh 0 0 20vw;
   position: fixed;
   background-color: crimson;
   overflow: auto;
@@ -57,15 +53,6 @@ export const ButtonStyle3 = styled.img`
   width: 5vw;
   margin-bottom: 1.5%;
 `;
-
-
-
-
-// ---------------------------------------------------------------------------------------------------------------------------------------
-
-// @media (max-width: 2560px) {
-//   border: 5px solid blue;
-//  }
 
 // ----------------------------------------------------------------PokemonData-----------------------------------------------------------
 export const PokedexContainer = styled.div`
@@ -116,9 +103,6 @@ filter: drop-shadow(1px 1px 5px #000);
 
 `
 // --------------------------------------------------------------------------------------------------------------------------------------------
-// @media (max-width: 2560px) {
-//   border: 5px solid blue;
-//  }
 
 // ----------------------------------------------------------------PokemonDataDetail-----------------------------------------------------------
 export const DataContainer = styled.div`
@@ -138,6 +122,3 @@ export const DataCardContainer = styled.div`
 `;
 // ------------------------------------------------------------------------------------------------------------------------------------------
 
-// @media (max-width: 2560px) {
-//   border: 5px solid blue;
-//  }

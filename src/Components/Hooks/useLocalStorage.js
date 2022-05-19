@@ -7,7 +7,6 @@ const useLocalStorage = (key, initialValue) => {
     return item ? JSON.parse(item) : initialValue;
   });
 
-  
   const setValue = (value) => {
     const doesExist = storedValue.find((x) => x.id === value.id);
 

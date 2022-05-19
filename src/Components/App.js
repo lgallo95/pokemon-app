@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from "react";
-import axios from "../API/Api.js";
 import PokemonCards from "./PokemonCards";
 
-import {  MainContainer} from "../Components/Styling/Styles";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
+  const url = "https://api.pokemontcg.io/v2/cards";
 
   useEffect(() => {
-    axios
-      .get("cards")
-      .then((res) => {
-        console.log(res.data.data);
-        setPokemonData(res.data.data);
-        console.log(pokemonData);
+    fetch(url, {
+      method: "GET",
+      withCredentials: true,
+      headers: {
+        "x-api-key": "af08500c-f6d1-491a-aa2a-75c980bb1e54",
+        "Content-Type": "application/json"
+      }
+    })
+      .then(resp => resp.json())
+      .then(function(res) {
+        setPokemonData(res.data)
       })
-      .catch((res) => {
-        console.log(res);
+      .catch(function(error) {
+        console.log(error);
       });
   }, []);
 
 
   return (
     <div>
-    <MainContainer>
       <PokemonCards pokemonData={pokemonData} />
-    </MainContainer>
     </div>
   );
 }

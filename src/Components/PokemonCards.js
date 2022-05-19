@@ -17,15 +17,15 @@ import {
 
 export default function Dataset(props) {
   const { pokemonData } = props;
-  const [search, setSearch] = useState(true);
+  const [pokemonList, setPokemonList] = useState(true);
   const [favArray, setFavArray, removeVal] = useLocalStorage("favArray", []);
 
   const filterFav = () => {
-    setSearch(false);
+    setPokemonList(false);
   };
 
   const unFilterFav = () => {
-    setSearch(true);
+    setPokemonList(true);
   };
 
   const normalData = pokemonData.map((pokemon) => {
@@ -61,7 +61,7 @@ export default function Dataset(props) {
       </ButtonBackgroundStyle>
       <DataStyle>
         <div>
-          <div>{search === true ? normalData : favData}</div>
+          <div>{pokemonList === true ? normalData : favData}</div>
         </div>
       </DataStyle>
     </div>

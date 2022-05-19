@@ -5,15 +5,15 @@ import {PokedexContainer, CardContainer, CardImg, InfoPanel, NamePlate} from "./
 
 export default function PokemonData(props) {
   const { pokemonData, setFavArray, removeVal, isFav } = props;
-  const [displayData, setdisplayData] = useState(false);
+  const [displayPokemonData, setDisplayPokemonData] = useState(false);
 
   const onClick = () => {
-    if (displayData === false) {
-      setdisplayData(true);
+    if (displayPokemonData === false) {
+      setDisplayPokemonData(true);
     } 
     else 
     {
-      setdisplayData(false);
+      setDisplayPokemonData(false);
     }
   };
 
@@ -32,7 +32,7 @@ export default function PokemonData(props) {
         <PokemonDataDetail
           setFavArray = {setFavArray}
           pokemonData={pokemonData}
-          displayData={displayData}
+          displayPokemonData={displayPokemonData}
           removeVal = {removeVal}
           isFav = {isFav}
         />
