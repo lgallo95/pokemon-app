@@ -4,9 +4,7 @@ import image from "../Images/screenblue.jpg";
 // ----------------------------------------------------------------PokemonCards-----------------------------------------------------------
 
 export const MainContainer = styled.div `
- 
 margin: 3vh 0 0 20vw;
-
 `
 
 export const ButtonBackgroundStyle = styled.div`
@@ -22,11 +20,6 @@ export const ButtonBackgroundStyle = styled.div`
 `;
 
 export const DataStyle = styled.div`
-  // top: 7%;
-  // left: 0;
-  // 
-  // padding: 1%;
-  
   margin: 3vh 0 0 20vw;
   position: fixed;
   background-color: crimson;
@@ -92,15 +85,11 @@ export const InfoPanel = styled.div`
 `;
 
 export const NamePlate = styled.h1`
-
 position: relative;
-
 background: #FFCB05;
-
 margin: 1vw 5vw;
 border-radius: 15px;
 filter: drop-shadow(1px 1px 5px #000);
-
 `
 // --------------------------------------------------------------------------------------------------------------------------------------------
 
